@@ -102,47 +102,86 @@ run-tests.bat
 
 
 
-\## 📊 Reports
+## 📊 Test Reports
 
+The framework generates multiple reports for better visibility and debugging.
+All reports are organized under the `target/` directory.
 
-
-\### ✅ Extent Report (Latest)
-
-
-
-```
-
-target/ExtentReports/latest/ExtentReport.html
+### 📁 Report Structure
 
 ```
-
-
-
-\### 📁 Archived Reports
-
-
-
+target/
+├── cucumber-html/
+│     └── cucumber-report.html        # Human-readable execution report
+│
+├── cucumber-json/
+│     └── cucumber-report.json        # Machine-readable report (CI/CD integration)
+│
+├── junit-report/
+│     └── cucumber-report.xml         # JUnit-style report for pipelines
+│
+└── ExtentReports/
+      ├── archive/                   # Historical reports (timestamped)
+      └── latest/
+           └── ExtentReport.html     # Latest execution report
 ```
 
-target/ExtentReports/archive/
+---
 
+### 📌 Report Types
+
+* **Cucumber HTML Report**
+
+  * Easy-to-read execution summary
+  * Shows scenarios, steps, and results
+
+* **Cucumber JSON Report**
+
+  * Used for integrations (CI/CD, dashboards, reporting tools)
+
+* **JUnit XML Report**
+
+  * Compatible with Jenkins, Azure DevOps, GitHub Actions
+
+* **Extent Report**
+
+  * Rich UI report with logs and detailed insights
+  * Maintains:
+
+    * 📁 **Archive reports** (history of executions)
+    * 📄 **Latest report** (quick access)
+
+---
+
+### ▶️ How to View Reports
+
+After execution:
+
+```bash
+mvn clean test
 ```
 
+Open reports from:
 
+* Latest Extent Report:
 
-\### 📄 Cucumber Report
+  ```
+  target/ExtentReports/latest/ExtentReport.html
+  ```
 
+* Cucumber HTML Report:
 
+  ```
+  target/cucumber-html/cucumber-report.html
+  ```
 
-```
+---
 
-target/cucumber-report.html
+### 💡 Notes
 
-```
-
-
-
-\---
+* Reports are generated automatically on every run
+* No manual folder creation required
+* Eclipse may require **Refresh (F5)** to display new reports
 
 
 
