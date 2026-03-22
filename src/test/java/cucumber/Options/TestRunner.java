@@ -15,9 +15,9 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(
         key = PLUGIN_PROPERTY_NAME,
         value = "pretty, " +
-                "html:target/cucumber-report.html, " +
-                "json:target/cucumber-report.json, " +
-                "junit:target/cucumber-report.xml, " +
+                "html:target/cucumber-html/cucumber-report.html, " +
+                "json:target/cucumber-json/cucumber-report.json, " +
+                "junit:target/junit-report/cucumber-report.xml, " +
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 )
 public class TestRunner {
