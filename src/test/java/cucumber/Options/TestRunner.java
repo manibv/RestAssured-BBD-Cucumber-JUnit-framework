@@ -14,7 +14,11 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "stepDefinations")
 @ConfigurationParameter(
         key = PLUGIN_PROPERTY_NAME,
-        value = "pretty, html:target/cucumber-report.html, com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        value = "pretty, " +
+                "html:target/cucumber-report.html, " +
+                "json:target/cucumber-report.json, " +
+                "junit:target/cucumber-report.xml, " +
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 )
 public class TestRunner {
 }
